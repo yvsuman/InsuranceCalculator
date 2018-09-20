@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-md-5">
+		<app-insurance-list (insuranceWasSelected)="selectedInsurance = $event"></app-insurance-list>
+
+	</div>
+	<div class="col-md-7">
+		<app-insurance-detail *ngIf = "selectedInsurance; else infoText"
+		[insurance] = "selectedInsurance"></app-insurance-detail>
+		<ng-template #infoText>
+			<p>Please select a insurance!</p>
+
+		</ng-template>
+
+	</div>
+
+</div>
